@@ -17,7 +17,7 @@ public class PokemonServiceImplTest {
 
     @Test
     void testWithDisplayNameContainingSpecialCharacters() {
-        pockemonService.getPokemon("");
+        pockemonService.getPokemon("pikachu");
         assertTrue(true);
     }
 
