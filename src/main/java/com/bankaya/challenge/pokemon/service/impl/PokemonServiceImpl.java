@@ -36,6 +36,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public PokemonInDto getPokemon(String pokemon) {
+        logger.info("getPokemon");
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
@@ -48,6 +49,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public GetAbilitiesResponse getAbilities(String pokemon) {
+        logger.info("getAbilities");
         GetAbilitiesResponse response = new GetAbilitiesResponse();
         List<Ability> list = new ArrayList<Ability>();
         PokemonInDto pokemonDto = getPokemon(pokemon);
@@ -67,6 +69,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public GetBaseExperienceResponse getBaseExperience(String pokemon) {
+        logger.info("getBaseExperience");
         GetBaseExperienceResponse response = new GetBaseExperienceResponse();
         PokemonInDto pokemonDto = getPokemon(pokemon);
         response.setBaseExperience(pokemonDto.getBase_experience());
@@ -75,6 +78,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public GetHeldItemsResponse getHetdItems(String pokemon) {
+        logger.info("getHetdItems");
         GetHeldItemsResponse response = new GetHeldItemsResponse();
         PokemonInDto pokemonDto = getPokemon(pokemon);
         List<HeldItem> list = new ArrayList<HeldItem>();
@@ -92,6 +96,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public GetIdResponse getId(String pokemon) {
+        logger.info("getId");
         GetIdResponse response = new GetIdResponse();
         PokemonInDto pokemonDto = getPokemon(pokemon);
         response.setId(pokemonDto.getId());
@@ -100,6 +105,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public GetNameResponse getName(String pokemon) {
+        logger.info("getName");
         GetNameResponse response = new GetNameResponse();
         PokemonInDto pokemonDto = getPokemon(pokemon);
         response.setName(pokemonDto.getName());
@@ -108,6 +114,7 @@ public class PokemonServiceImpl implements PokemonService {
 
     @Override
     public GetLocationAreaEncountersResponse getLocationAreaEncounters(String pokemon) {
+        logger.info("getLocationAreaEncounters");
         GetLocationAreaEncountersResponse response = new GetLocationAreaEncountersResponse();
         PokemonInDto pokemonDto = getPokemon(pokemon);
         response.setLocationAreaEncounters(pokemonDto.getLocation_area_encounters());
